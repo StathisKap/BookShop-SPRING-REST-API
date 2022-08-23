@@ -22,8 +22,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.example.bookshop.model.books;
@@ -34,9 +32,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@Sql(scripts = { "classpath:books-schema.sql",
-"classpath:books-data.sql" }, executionPhase = ExecutionPhase.BEFORE_TEST_METHOD)
-@ActiveProfiles("test")
+//@Sql(scripts = { "classpath:books-schema.sql",
+//"classpath:books-data.sql" }, executionPhase = ExecutionPhase.BEFORE_TEST_METHOD)
+@ActiveProfiles("dev")
 class BookShopApplicationTests {
 
     @Autowired

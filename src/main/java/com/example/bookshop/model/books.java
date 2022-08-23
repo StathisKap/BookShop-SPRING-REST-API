@@ -15,6 +15,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class books {
+		public books() {
+		super();
+	}
+
+		public books(int bookid, String bookname, String author, int price) {
+		super();
+		this.bookid = bookid;
+		this.bookname = bookname;
+		this.author = author;
+		this.price = price;
+	}
+
 		//Defining book id as primary key  
 		@Id  
 		@Column  

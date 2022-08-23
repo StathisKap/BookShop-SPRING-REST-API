@@ -27,8 +27,8 @@ public class BookService {
 	}
 
 	//saving a specific record by using the method save() of CrudRepository
-	public void saveOrUpdate(books books1) {
-		booksRepository.save(books1);
+	public books saveOrUpdate(books books1) {
+		return booksRepository.save(books1);
 	}
 
 	//deleting a specific record by using the method deleteById() of CrudRepository
