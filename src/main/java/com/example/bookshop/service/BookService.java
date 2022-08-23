@@ -4,7 +4,9 @@ package com.example.bookshop.service;
 	import java.util.List;
 	import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.stereotype.Service;
-	import com.example.bookshop.model.books;
+
+import com.example.bookshop.exceptions.BookNotFoundID;
+import com.example.bookshop.model.books;
 	import com.example.bookshop.repo.booksRepository;
 
 
@@ -21,7 +23,7 @@ public class BookService {
 
 	//getting a specific record by using the method findById() of CrudRepository
 	public books getBooksById(int id){
-		return 	booksRepository.findById(id).get();
+		return 	booksRepository.findById(id).orElseThrow(BookNotFoundID::new);
 	}
 
 	//saving a specific record by using the method save() of CrudRepository
